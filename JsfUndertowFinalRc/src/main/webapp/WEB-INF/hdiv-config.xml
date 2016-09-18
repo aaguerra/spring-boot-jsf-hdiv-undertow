@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:hdiv="http://www.hdiv.org/schema/hdiv" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans.xsd 
+                           http://www.hdiv.org/schema/hdiv http://www.hdiv.org/schema/hdiv/hdiv.xsd">
+                           
+ 	<hdiv:config errorPage="/500.xhtml" confidentiality="false" maxPagesPerSession="5" strategy="cipher"
+ 		avoidCookiesIntegrity="true" avoidCookiesConfidentiality="true" excludedExtensions="png,jpg,jpge,pdf" protectedExtensions=".*" >
+            <hdiv:sessionExpired loginPage="/templates/registro/login.xhtml" homePage="/templates/modulo/home.xhtml"/>
+            <hdiv:startPages method="get">/,/javax.faces.resource/.*,/templates/registro/descargarComprobante.xhtml,/templates/registro/login.xhtml,/templates/modulo/viewPdf.xhtml,/index.xhtml,/templates/registro/cambioClave.xhtml</hdiv:startPages>
+            <hdiv:startParameters>javax.faces.*</hdiv:startParameters>
+	</hdiv:config>
+	
+</beans>
